@@ -73,10 +73,10 @@ jobs:
       run: |
           docker push ybipin/boardgame-test:latest
           
-    - name: Kubectl Action
+    - name: Kubectl Action # this is the command used for the deloyment of the cluster 
       uses: tale/kubectl-action@v1
       with:
-        base64-kube-config: ${{ secrets.KUBE_CONFIG }}
+        base64-kube-config: ${{ secrets.KUBE_CONFIG }} 
     - run: |
           kubectl apply -f deployment-service.yaml -n webapps
           kubectl get svc -n webapps
