@@ -29,13 +29,13 @@ jobs:
     - name: Trivy FS Scan
       run: |
         trivy fs --format table -o trivy-fs-report.html .
-
+# sonarqube credentional we have to put as a secret key
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-
+# need to know more about this topic
     - name: Install jq
       run: sudo apt-get update && sudo apt-get install -y jq
 
@@ -54,18 +54,18 @@ jobs:
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
-
+# to build the docker image my docker username and password we have to as a secret key
     - name: Build Docker Image
       run: |
         docker build -t ybipin/boardgame-test:latest .
-
+# | we are using for the more than one line output at a single time
     - name: Trivy Image Scan
       run: |
         trivy image --format table -o trivy-image-report.html ybipin/board:latest
 
     - name: Login to Docker Hub
       uses: docker/login-action@v3
-      with:
+      with: # doker hub token / docker hub password all good.
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
