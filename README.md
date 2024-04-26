@@ -5,6 +5,11 @@
 **Board Game Database Full-Stack Web Application.**
 This web application displays lists of board games and their reviews. While anyone can view the board game lists and reviews, they are required to log in to add/ edit the board games and their reviews. The 'users' have the authority to add board games to the list and add reviews, and the 'managers' have the authority to edit/ delete the reviews on top of the authorities of users.  
 
+## Porject doc file is uploaded ##
+Inside the project doc file we have explain the bit about the topic and how we porocced for the next action plan and how we define the resources / tool.
+Please refere the document for the more information.
+
+
 ## Technologies
 
 - Java
@@ -51,3 +56,7 @@ This web application displays lists of board games and their reviews. While anyo
   - username: bugs    |     password: bunny (user role)
   - username: daffy   |     password: duck  (manager role)
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
+
+
+
+
